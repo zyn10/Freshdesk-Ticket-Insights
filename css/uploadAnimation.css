@@ -1,0 +1,15 @@
+.upload-box.uploading {
+  animation: border-glow 1.5s linear infinite;
+}
+
+@keyframes border-glow {
+  0% {
+    box-shadow: 0px 0px 10px rgba(79, 172, 254, 0.5);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(79, 172, 254, 1);
+  }
+  100% {
+    box-shadow: 0px 0px 10px rgba(79, 172, 254, 0.5);
+  }
+}

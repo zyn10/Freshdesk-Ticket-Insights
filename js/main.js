@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const scripts = ["cursor.js", "fileUpload.js"];
+  const scripts = ["cursor.js", "uploadAnimation.js", "fileUpload.js"];
 
   scripts.forEach((script) => {
     const scriptTag = document.createElement("script");
