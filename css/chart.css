@@ -1,0 +1,81 @@
+/* Ensure no horizontal scrolling */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Manrope", sans-serif;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2vw;
+  margin: 3vh 0;
+  font-weight: 700;
+  color: #34495e;
+}
+
+/* Responsive Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2vw;
+  padding: 2vw;
+  max-width: 98vw;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Chart Container */
+.chart-container {
+  width: 100%;
+  height: 45vh;
+  background: #ffffff;
+  padding: 2vh;
+  border-radius: 1.5vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Fix Overflow for Chart Labels */
+.chart-container canvas {
+  padding-top: 1vh;
+  max-height: 100%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 3vw;
+  }
+  .chart-container {
+    height: 42vh;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 4vw;
+  }
+  .chart-container {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 5vw;
+  }
+  .charts-grid {
+    padding: 4vw;
+  }
+  .chart-container {
+    height: 38vh;
+    padding: 2vh;
+  }
+}
