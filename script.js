@@ -162,30 +162,30 @@ function loadChartData() {
     "ticketsByStatusChart",
     "Tickets by Status",
     chartsData.ticketsByStatus,
-    chartColors[0]
+    true // ✅ Only this chart is horizontal
   );
   createChart(
     "unresolvedByTypeChart",
     "Unresolved Tickets by Type",
     chartsData.unresolvedByType,
-    chartColors[1]
+    false
   );
   createChart(
     "topClientsByPriorityChart",
     "Top Clients by Resolved Priority",
     chartsData.topClientsByPriority,
-    chartColors[2]
+    false
   );
   createChart(
     "unresolvedByCustomerChart",
     "Unresolved Tickets by Customer",
     chartsData.unresolvedByCustomer,
-    chartColors[3]
+    false
   );
 }
 
-// **Create Chart (No Grid)**
-function createChart(canvasId, label, data, color) {
+// **Create Chart with Total Counters**
+function createChart(canvasId, label, data, isHorizontal) {
   const ctx = document.getElementById(canvasId);
   if (!ctx) {
     console.error(`Canvas element ${canvasId} not found.`);
@@ -200,27 +200,52 @@ function createChart(canvasId, label, data, color) {
         {
           label: label,
           data: data.values,
-          backgroundColor: color,
-          borderColor: color,
-          borderWidth: 1,
+          backgroundColor: chartColors,
+          borderRadius: 5,
         },
       ],
     },
     options: {
+      indexAxis: isHorizontal ? "y" : "x", // ✅ Horizontal for Chart 1, Vertical for others
       responsive: true,
       maintainAspectRatio: false,
       scales: {
         x: {
+          beginAtZero: true,
           grid: { display: false },
+          ticks: { font: { size: 14 } },
         },
         y: {
           grid: { display: false },
-          beginAtZero: true,
+          ticks: { font: { size: 14 } },
         },
       },
       plugins: {
         legend: { display: false },
+        tooltip: { enabled: true },
+        datalabels: {
+          anchor: "end",
+          align: "end",
+          color: "#000",
+          font: { weight: "bold", size: 14 },
+          formatter: (value) => value, // ✅ Show total count at end of each bar
+        },
       },
     },
+    plugins: [ChartDataLabels],
   });
+
+  // **Add title below the chart**
+  const chartContainer = ctx.parentElement;
+  let existingTitle = chartContainer.querySelector(".chart-title");
+
+  if (!existingTitle) {
+    const title = document.createElement("div");
+    title.className = "chart-title";
+    title.innerText = label;
+    title.style.textAlign = "center";
+    title.style.marginTop = "10px";
+    title.style.fontWeight = "bold";
+    chartContainer.appendChild(title);
+  }
 }
