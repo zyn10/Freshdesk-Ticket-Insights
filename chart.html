@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chart Visualization</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="css/chart.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/chart.css" />
   </head>
   <body>
     <h2>Ticket Analysis</h2>
-
     <div class="charts-grid">
       <div class="chart-container">
         <canvas id="ticketsByStatusChart"></canvas>
@@ -28,90 +28,6 @@
         <canvas id="unresolvedByCustomerChart"></canvas>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const chartsData = JSON.parse(sessionStorage.getItem("chartsData"));
-        if (!chartsData) {
-          alert("No data available. Please upload a CSV file first.");
-          window.location.href = "index.html";
-          return;
-        }
-
-        const colors = ["#4E79A7", "#F28E2B", "#E15759", "#76B7B2"]; // Professional color palette
-
-        function createBarChart(canvasId, title, chartData) {
-          const ctx = document.getElementById(canvasId).getContext("2d");
-          new Chart(ctx, {
-            type: "bar",
-            data: {
-              labels: chartData.labels,
-              datasets: [
-                {
-                  label: title,
-                  data: chartData.values,
-                  backgroundColor: colors,
-                  borderColor: colors,
-                  borderWidth: 1,
-                  borderRadius: 8,
-                },
-              ],
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                legend: { display: false },
-                tooltip: { enabled: true },
-              },
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  ticks: { stepSize: 1 },
-                },
-              },
-              animation: {
-                onComplete: function () {
-                  const chartInstance = this;
-                  const ctx = chartInstance.ctx;
-                  ctx.textAlign = "center";
-                  ctx.textBaseline = "bottom";
-                  ctx.fillStyle = "#333";
-
-                  chartInstance.data.datasets.forEach((dataset, i) => {
-                    const meta = chartInstance.getDatasetMeta(i);
-                    meta.data.forEach((bar, index) => {
-                      const value = dataset.data[index];
-                      ctx.fillText(value, bar.x, bar.y - 5);
-                    });
-                  });
-                },
-              },
-            },
-          });
-        }
-
-        createBarChart(
-          "ticketsByStatusChart",
-          "Tickets by Status",
-          chartsData.ticketsByStatus
-        );
-        createBarChart(
-          "unresolvedByTypeChart",
-          "Unresolved Tickets by Type",
-          chartsData.unresolvedByType
-        );
-        createBarChart(
-          "topClientsByPriorityChart",
-          "Top Clients by Resolved Priority",
-          chartsData.topClientsByPriority
-        );
-        createBarChart(
-          "unresolvedByCustomerChart",
-          "Unresolved Tickets by Customer",
-          chartsData.unresolvedByCustomer
-        );
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

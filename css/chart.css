@@ -1,4 +1,4 @@
-/* Ensure no horizontal scrolling */
+/* Reset default margin & padding */
 html,
 body {
   margin: 0;
@@ -10,72 +10,90 @@ body {
   text-align: center;
 }
 
+/* Heading Styles */
 h2 {
-  font-size: 2vw;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   margin: 3vh 0;
   font-weight: 700;
   color: #34495e;
 }
 
-/* Responsive Grid */
+/* Responsive Grid - Two Cards Per Row */
 .charts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2vw;
-  padding: 2vw;
-  max-width: 98vw;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  justify-content: center;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
-/* Chart Container */
+/* Chart Container - Cards */
 .chart-container {
-  width: 100%;
-  height: 45vh;
   background: #ffffff;
-  padding: 2vh;
-  border-radius: 1.5vh;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  height: 300px;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
-/* Fix Overflow for Chart Labels */
+/* Ensure Charts Fit Properly */
 .chart-container canvas {
-  padding-top: 1vh;
   max-height: 100%;
+  width: 100% !important;
 }
 
-/* Responsive Fixes */
+/* Chart Title */
+.chart-title {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
   h2 {
-    font-size: 3vw;
+    font-size: clamp(1.5rem, 3vw, 2rem);
   }
   .chart-container {
-    height: 42vh;
+    height: 280px;
   }
 }
 
 @media (max-width: 768px) {
   h2 {
-    font-size: 4vw;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  .charts-grid {
+    grid-template-columns: repeat(1, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
   .chart-container {
-    height: 40vh;
+    height: 260px;
   }
 }
 
 @media (max-width: 480px) {
   h2 {
-    font-size: 5vw;
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
   }
   .charts-grid {
-    padding: 4vw;
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+    padding: 1rem;
+    gap: 1rem;
   }
   .chart-container {
-    height: 38vh;
-    padding: 2vh;
+    height: 240px;
+    padding: 1.5rem;
   }
 }
