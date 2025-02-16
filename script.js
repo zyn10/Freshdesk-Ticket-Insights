@@ -1,9 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("chart.html")) {
     loadChartData();
-    return;
+  } else {
+    initializeFileHandlers();
   }
+});
+// Create Cursor Elements
+const cursor = document.createElement("div");
+cursor.classList.add("custom-cursor");
 
+const outline = document.createElement("div");
+outline.classList.add("cursor-outline");
+
+document.body.appendChild(cursor);
+document.body.appendChild(outline);
+
+// Move Cursor with Slight Delay
+document.addEventListener("mousemove", (e) => {
+  // Main red dot follows instantly
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
+
+  // Outline follows with slight delay
+  setTimeout(() => {
+    outline.style.left = `${e.clientX}px`;
+    outline.style.top = `${e.clientY}px`;
+  }, 80); // Adjust delay for smooth trailing effect
+});
+
+// File Handling
+function initializeFileHandlers() {
   const fileInput = document.getElementById("fileInput");
   const dropArea = document.getElementById("dropArea");
 
@@ -25,43 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
   dropArea.addEventListener("drop", (event) =>
     handleFileDrop(event, fileInput)
   );
-});
-
-const chartColors = ["#8ed973", "#ff0000", "#e97132", "#0e9ed5"];
-
-// **Handle File Selection**
-function handleFileSelection(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  if (!file.name.toLowerCase().endsWith(".csv")) {
-    alert("Invalid file type! Please upload a CSV file.");
-    event.target.value = "";
-  } else {
-    processCSVFile(file);
-  }
 }
 
-// **Handle File Drop**
+function handleFileSelection(event) {
+  const file = event.target.files[0];
+  validateAndProcessFile(file, event.target);
+}
+
 function handleFileDrop(event, fileInput) {
   event.preventDefault();
   event.currentTarget.classList.remove("drag-over");
 
   const file = event.dataTransfer.files[0];
-  if (!file) return;
-
-  if (!file.name.toLowerCase().endsWith(".csv")) {
-    alert("Invalid file type! Please upload a CSV file.");
-  } else {
+  if (file) {
     let dataTransfer = new DataTransfer();
     dataTransfer.items.add(file);
     fileInput.files = dataTransfer.files;
-
-    processCSVFile(file);
+    validateAndProcessFile(file, fileInput);
   }
 }
 
-// **Process CSV File**
+function validateAndProcessFile(file, inputElement) {
+  if (!file || !file.name.toLowerCase().endsWith(".csv")) {
+    alert("Invalid file type! Please upload a CSV file.");
+    inputElement.value = "";
+    return;
+  }
+  processCSVFile(file);
+}
+
+// Data Processing
 function processCSVFile(file) {
   const reader = new FileReader();
 
@@ -82,87 +101,91 @@ function processCSVFile(file) {
 
     if (columnIndexes.includes(-1)) {
       alert(
-        "Missing required columns in file! Expected: Status, Priority, Type, Tags."
+        "Missing required columns! Expected: Status, Priority, Type, Tags."
       );
       return;
     }
 
     const [statusIndex, priorityIndex, typeIndex, tagsIndex] = columnIndexes;
+    let chartsData = initializeChartData();
 
-    let chartsData = {
-      ticketsByStatus: {},
-      unresolvedByType: {},
-      topClientsByPriority: {},
-      unresolvedByCustomer: {},
-    };
+    rows.slice(1).forEach((row) =>
+      processRow(row, headers.length, chartsData, {
+        statusIndex,
+        priorityIndex,
+        typeIndex,
+        tagsIndex,
+      })
+    );
 
-    // Process data rows
-    rows.slice(1).forEach((row) => {
-      if (row.length !== headers.length) return;
-
-      const status = row[statusIndex];
-      const priority = row[priorityIndex];
-      const type = row[typeIndex];
-      const tags = row[tagsIndex];
-
-      const customer = tags ? tags.split(";")[0] : "Unknown";
-
-      if (status)
-        chartsData.ticketsByStatus[status] =
-          (chartsData.ticketsByStatus[status] || 0) + 1;
-
-      if (["Waiting on ThingTrax", "Waiting on Customer"].includes(status)) {
-        chartsData.unresolvedByType[type] =
-          (chartsData.unresolvedByType[type] || 0) + 1;
-      }
-
-      if (["Resolved", "Closed"].includes(status)) {
-        chartsData.topClientsByPriority[customer] =
-          (chartsData.topClientsByPriority[customer] || 0) + 1;
-      }
-
-      if (["Waiting on ThingTrax", "Waiting on Customer"].includes(status)) {
-        chartsData.unresolvedByCustomer[customer] =
-          (chartsData.unresolvedByCustomer[customer] || 0) + 1;
-      }
-    });
-
-    function convertToChartData(obj) {
-      return {
-        labels: Object.keys(obj),
-        values: Object.values(obj),
-      };
-    }
-
-    let finalChartsData = {
-      ticketsByStatus: convertToChartData(chartsData.ticketsByStatus),
-      unresolvedByType: convertToChartData(chartsData.unresolvedByType),
-      topClientsByPriority: convertToChartData(chartsData.topClientsByPriority),
-      unresolvedByCustomer: convertToChartData(chartsData.unresolvedByCustomer),
-    };
-
-    sessionStorage.setItem("chartsData", JSON.stringify(finalChartsData));
+    sessionStorage.setItem(
+      "chartsData",
+      JSON.stringify(convertToChartData(chartsData))
+    );
     window.location.href = "chart.html";
   };
 
   reader.readAsText(file);
 }
 
-// **Load Chart Data**
+function initializeChartData() {
+  return {
+    ticketsByStatus: {},
+    unresolvedByType: {},
+    topClientsByPriority: {},
+    unresolvedByCustomer: {},
+  };
+}
+
+function processRow(row, headerLength, chartsData, indexes) {
+  if (row.length !== headerLength) return;
+
+  const { statusIndex, priorityIndex, typeIndex, tagsIndex } = indexes;
+  const status = row[statusIndex];
+  const priority = row[priorityIndex];
+  const type = row[typeIndex];
+  const tags = row[tagsIndex];
+  const customer = tags ? tags.split(";")[0] : "Unknown";
+
+  if (status)
+    chartsData.ticketsByStatus[status] =
+      (chartsData.ticketsByStatus[status] || 0) + 1;
+  if (["Waiting on ThingTrax", "Waiting on Customer"].includes(status))
+    chartsData.unresolvedByType[type] =
+      (chartsData.unresolvedByType[type] || 0) + 1;
+  if (["Resolved", "Closed"].includes(status))
+    chartsData.topClientsByPriority[customer] =
+      (chartsData.topClientsByPriority[customer] || 0) + 1;
+  if (["Waiting on ThingTrax", "Waiting on Customer"].includes(status))
+    chartsData.unresolvedByCustomer[customer] =
+      (chartsData.unresolvedByCustomer[customer] || 0) + 1;
+}
+
+function convertToChartData(obj) {
+  return Object.fromEntries(
+    Object.entries(obj).map(([key, value]) => [
+      key,
+      { labels: Object.keys(value), values: Object.values(value) },
+    ])
+  );
+}
+
+// Chart Handling
+const chartColors = ["#8ed973", "#ff0000", "#e97132", "#0e9ed5"];
+
 function loadChartData() {
   const storedData = sessionStorage.getItem("chartsData");
   if (!storedData) {
-    console.error("No chart data found in sessionStorage.");
+    console.error("No chart data found.");
     return;
   }
 
   const chartsData = JSON.parse(storedData);
-
   createChart(
     "ticketsByStatusChart",
     "Tickets by Status",
     chartsData.ticketsByStatus,
-    true // ✅ Only this chart is horizontal
+    true
   );
   createChart(
     "unresolvedByTypeChart",
@@ -184,11 +207,10 @@ function loadChartData() {
   );
 }
 
-// **Create Chart with Total Counters**
 function createChart(canvasId, label, data, isHorizontal) {
   const ctx = document.getElementById(canvasId);
   if (!ctx) {
-    console.error(`Canvas element ${canvasId} not found.`);
+    console.error(`Canvas ${canvasId} not found.`);
     return;
   }
 
@@ -198,7 +220,7 @@ function createChart(canvasId, label, data, isHorizontal) {
       labels: data.labels,
       datasets: [
         {
-          label: label,
+          label,
           data: data.values,
           backgroundColor: chartColors,
           borderRadius: 5,
@@ -206,7 +228,7 @@ function createChart(canvasId, label, data, isHorizontal) {
       ],
     },
     options: {
-      indexAxis: isHorizontal ? "y" : "x", // ✅ Horizontal for Chart 1, Vertical for others
+      indexAxis: isHorizontal ? "y" : "x",
       responsive: true,
       maintainAspectRatio: false,
       scales: {
@@ -215,10 +237,7 @@ function createChart(canvasId, label, data, isHorizontal) {
           grid: { display: false },
           ticks: { font: { size: 14 } },
         },
-        y: {
-          grid: { display: false },
-          ticks: { font: { size: 14 } },
-        },
+        y: { grid: { display: false }, ticks: { font: { size: 14 } } },
       },
       plugins: {
         legend: { display: false },
@@ -228,17 +247,19 @@ function createChart(canvasId, label, data, isHorizontal) {
           align: "end",
           color: "#000",
           font: { weight: "bold", size: 14 },
-          formatter: (value) => value, // ✅ Show total count at end of each bar
+          formatter: (value) => value,
         },
       },
     },
     plugins: [ChartDataLabels],
   });
 
-  // **Add title below the chart**
+  addChartTitle(ctx, label);
+}
+
+function addChartTitle(ctx, label) {
   const chartContainer = ctx.parentElement;
   let existingTitle = chartContainer.querySelector(".chart-title");
-
   if (!existingTitle) {
     const title = document.createElement("div");
     title.className = "chart-title";
