@@ -1,0 +1,1946 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <ss:Worksheet ss:Name="Sheet1">
+    <ss:Table>
+      <ss:Row>
+        
+            <ss:Cell><ss:Data ss:Type="String">Ticket ID</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Subject</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Status</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Priority</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Source</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Type</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Agent</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Group</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Created time</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Due by Time</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Resolved time</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Closed time</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Last update time</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Initial response time</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Time tracked</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">First response time (in hrs)</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Resolution time (in hrs)</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Agent interactions</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Customer interactions</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Resolution status</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">First response status</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Tags</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Survey results</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Association type</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Product</ss:Data></ss:Cell>
+        
+            <ss:Cell><ss:Data ss:Type="String">Every response status</ss:Data></ss:Cell>
+        
+        
+          
+            <ss:Cell><ss:Data ss:Type="String">Full name</ss:Data></ss:Cell>
+          
+            <ss:Cell><ss:Data ss:Type="String">Contact ID</ss:Data></ss:Cell>
+          
+        
+        
+          
+            <ss:Cell><ss:Data ss:Type="String">Company Name</ss:Data></ss:Cell>
+          
+        
+      </ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19381</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Manage: Allow Editing of Monthly Meeting Frequency (Similar to Weekly)</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Problem</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Mobile App</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-08 15:00:06</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-06 15:00:09</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-08 17:10:09</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">DMS</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Gautham Venkatasubramanyan</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">gautham@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19388</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Demo.thingtrax.com Power BI Custom Reports</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Master Data</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">PBi Reports</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-08 18:56:54</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-07 10:00:32</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-04 11:00:33</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Demo</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Allan Carney</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">allan@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19418</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Radnor 40.3: Discrepancy Between Equipment Downtime Graph and Current Shift Availability in List View</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-09 15:05:25</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-07 15:05:40</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-09 17:19:50</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Radnor</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Gautham Venkatasubramanyan</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">gautham@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19497</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">efficiency page print out</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on Customer</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Feedback Widget</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Question</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Question/Query</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-14 13:26:01</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-13 13:26:45</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-14 15:31:14</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-14 15:31:12</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">02:05:11</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo India</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Trupti Patel</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">patelt@carclo-plc.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19523</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans - Incorrect Unclassified Downtime applied - HIGH</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Medium</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Question</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Question/Query</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-15 22:14:52</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-28 10:00:51</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 12:14:51</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-27 21:59:57</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">64:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">David Payne</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">david.payne@mccolgans.ie</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19582</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">SERVER REPLACEMENT</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Shipment</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">IoT Devices</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-17 10:39:13</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-18 10:39:55</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-17 11:07:33</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">SilAfrica</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">rhoda zipporah</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">rhoda.zipporah@silafrica.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Silafrica</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19740</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Machine/Device Changes</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Device issue</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-23 16:44:01</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-26 11:23:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 11:07:41</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 11:00:28</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">26:16:27</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">5</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">RGE Whittlesey</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Ellis Lambert</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ellis.lambert@rgegroup.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">RGE Whittlesey</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19746</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Quin - Power BI - capacity analysis</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Feature Request</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">PBi Reports</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-23 18:55:48</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-24 18:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-04 11:00:08</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Quin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Allan Carney</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">allan@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19750</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Mitcham - Press 72 Morning Shift 15/01/2025 has 384.5 All Hours in a 12 Hour Shift - HIGH</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">High</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Bi Reports/Data issue</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">PBi Reports</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-23 20:14:37</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 10:00:12</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 10:04:43</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-28 13:10:03</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">19:10:03</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">SLA Violated</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Mitcham</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19757</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans - All hours greater than Shift - HIGH</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">High</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">PBi Reports</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-23 21:16:56</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 10:00:41</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 10:04:44</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-24 11:11:57</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">01:11:57</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19783</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Mitcham - Cannot revert edit tool cavity changes - HIGH</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">High</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-24 15:52:01</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 15:52:57</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 16:05:15</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Mitcham</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">19825</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Southern Champion - IOT Healthcheck - MED</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on Customer</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Master Data</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">IoT Devices</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-25 01:30:27</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-27 10:18:11</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-31 22:44:40</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 19:47:59</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">24:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">3</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">5</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">southern champion</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20074</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Performance calc</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Medium</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Omair Anwer</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-28 18:38:38</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-14 10:00:21</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-04 13:43:10</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 12:12:36</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">02:12:36</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">David Payne</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">david.payne@mccolgans.ie</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20080</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans - 27/01 - FG4 - Runtime error</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">High</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Hiba Johnson</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-28 20:28:13</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 10:00:32</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 10:04:44</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Allan Carney</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">allan@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20086</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans - VReport Table - Negative Runtime</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Open</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">High</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Omair Anwer</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-28 21:07:12</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 10:00:19</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-04 12:08:06</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-01 01:05:45</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">24:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">4</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">SLA Violated</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">McColgans</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Allan Carney</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">allan@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20087</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Latrobe - Press 98 27/01/2025 unplanned downtime variance - HIGH</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Problem</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-28 21:07:34</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-28 10:00:22</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 11:05:29</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Latrobe</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20095</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Radnor - Job History Report not functioning - MED</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Problem</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">PBi Reports</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 01:31:05</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-28 10:00:36</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 11:09:28</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Radnor</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20097</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Mitcham - OneApp Back Button - LOW</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Feature Request</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Mobile App</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 01:44:07</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-28 10:00:12</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-04 11:02:44</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Carclo Mitcham</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20102</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">All Portals - Remove view Job Report Button from Job History Report - LOW</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Feature Request</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 02:12:22</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-28 10:00:35</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-04 11:23:32</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">0</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">All Customers</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">John Timlin</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jtimlin@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20129</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Global View Not Working</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Problem</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 14:03:31</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-28 14:04:25</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-01 14:22:54</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-01 14:22:53</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">19:56:29</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">1</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">carclo,Desch UK</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Jimmy Edwards</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">jimmy@thingtrax.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">ThingTrax</ss:Data></ss:Cell>
+  
+</ss:Row><ss:Row>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">20132</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">actul production is not matching TT DATA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Waiting on ThingTrax</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Feedback Widget</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Problem</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">MUHAMMAD ZAIN</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Question/Query</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 14:38:19</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-03-28 15:25:25</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-02-03 11:22:37</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">2025-01-29 14:52:14</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:13:55</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">00:00:00</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">2</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="Number">4</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Within SLA</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">STL</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Slightly dissatisfied</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">No Product</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String"></ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Siraj Basheer</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">siraj.basheer@silafrica.com</ss:Data></ss:Cell>
+  
+    
+    <ss:Cell><ss:Data ss:Type="String">Silafrica</ss:Data></ss:Cell>
+  
+</ss:Row>    </ss:Table>
+  </ss:Worksheet>
+</ss:Workbook>

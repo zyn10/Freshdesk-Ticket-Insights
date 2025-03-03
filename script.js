@@ -5,30 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeFileHandlers();
   }
 });
-// Create Cursor Elements
-const cursor = document.createElement("div");
-cursor.classList.add("custom-cursor");
 
-const outline = document.createElement("div");
-outline.classList.add("cursor-outline");
-
-document.body.appendChild(cursor);
-document.body.appendChild(outline);
-
-// Move Cursor with Slight Delay
-document.addEventListener("mousemove", (e) => {
-  // Main red dot follows instantly
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-
-  // Outline follows with slight delay
-  setTimeout(() => {
-    outline.style.left = `${e.clientX}px`;
-    outline.style.top = `${e.clientY}px`;
-  }, 80); // Adjust delay for smooth trailing effect
-});
-
-// File Handling
+// File Handling and Data Processing (unchanged)
 function initializeFileHandlers() {
   const fileInput = document.getElementById("fileInput");
   const dropArea = document.getElementById("dropArea");
@@ -193,17 +171,15 @@ function loadChartData() {
     chartsData.unresolvedByType,
     false
   );
-  createChart(
+  createStackedBarChart(
     "topClientsByPriorityChart",
-    "Top Clients by Resolved Priority",
-    chartsData.topClientsByPriority,
-    false
+    "Top 5 Clients by Resolved Priority",
+    chartsData.topClientsByPriority
   );
-  createChart(
+  createStackedBarChart(
     "unresolvedByCustomerChart",
-    "Unresolved Tickets by Customer",
-    chartsData.unresolvedByCustomer,
-    false
+    "Unresolved Tickets by Priority",
+    chartsData.unresolvedByCustomer
   );
 }
 
@@ -241,6 +217,76 @@ function createChart(canvasId, label, data, isHorizontal) {
       },
       plugins: {
         legend: { display: false },
+        tooltip: { enabled: true },
+        datalabels: {
+          anchor: "end",
+          align: "end",
+          color: "#000",
+          font: { weight: "bold", size: 14 },
+          formatter: (value) => value,
+        },
+      },
+    },
+    plugins: [ChartDataLabels],
+  });
+
+  addChartTitle(ctx, label);
+}
+
+function createStackedBarChart(canvasId, label, data) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) {
+    console.error(`Canvas ${canvasId} not found.`);
+    return;
+  }
+
+  const labels = data.labels.slice(0, 5); // Top 5 clients
+  const datasets = [
+    {
+      label: "Urgent",
+      data: labels.map((label) => data.values[labels.indexOf(label)] || 0),
+      backgroundColor: "#ff0000",
+    },
+    {
+      label: "High",
+      data: labels.map((label) => data.values[labels.indexOf(label)] || 0),
+      backgroundColor: "#e97132",
+    },
+    {
+      label: "Medium",
+      data: labels.map((label) => data.values[labels.indexOf(label)] || 0),
+      backgroundColor: "#0e9ed5",
+    },
+    {
+      label: "Low",
+      data: labels.map((label) => data.values[labels.indexOf(label)] || 0),
+      backgroundColor: "#8ed973",
+    },
+  ];
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels,
+      datasets,
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+          grid: { display: false },
+          ticks: { font: { size: 14 } },
+        },
+        y: {
+          stacked: true,
+          grid: { display: false },
+          ticks: { font: { size: 14 } },
+        },
+      },
+      plugins: {
+        legend: { display: true },
         tooltip: { enabled: true },
         datalabels: {
           anchor: "end",
