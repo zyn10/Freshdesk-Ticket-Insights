@@ -10,7 +10,6 @@ export function renderTableFromStorage() {
     return;
   }
 
-  // Render table header (same as before)
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
   data[0].forEach((header) => {
@@ -23,12 +22,10 @@ export function renderTableFromStorage() {
 
   const rowsData = data.slice(1);
 
-  // Initialize pagination
   setupPagination({
     data: rowsData,
-    rowsPerPage: 5, // Adjust rows per page as needed
+    rowsPerPage: 10,
     onPageChange: (pageData) => {
-      // Render rows for the current page
       const tbody = document.createElement("tbody");
       pageData.forEach((row) => {
         const tr = document.createElement("tr");

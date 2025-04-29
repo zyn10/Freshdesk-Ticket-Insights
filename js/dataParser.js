@@ -1,4 +1,3 @@
-// dataParser.js
 export function parseAndStoreFile(file) {
   const reader = new FileReader();
   const isCSV = file.name.endsWith(".csv");
@@ -30,22 +29,18 @@ export function parseAndStoreFile(file) {
       "Subject",
       "Status",
       "Priority",
-      "Created time",
-      "Resolution time (in hrs)",
-      "Customer interactions",
+      "Tags",
+      "Group",
     ];
 
-    // ✅ Reduce the data
     const headerRow = rows[0];
     const dataRows = rows.slice(1);
     const indicesToKeep = columnsToKeep.map((col) => headerRow.indexOf(col));
-
     const reducedRows = [
       columnsToKeep,
       ...dataRows.map((row) => indicesToKeep.map((i) => row[i] ?? "")),
     ];
 
-    // ✅ Store reduced data
     localStorage.setItem("parsedData", JSON.stringify(reducedRows));
   };
 
