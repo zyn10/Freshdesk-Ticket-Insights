@@ -55,7 +55,7 @@ function parseAndRedirect(file) {
   parseAndStoreFile(file);
 
   setTimeout(() => {
-    window.location.href = "viewer.html"; // Navigate to the next page
+    window.location.href = "viewer.html";
   }, 2000);
 }
 

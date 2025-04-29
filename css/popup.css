@@ -1,5 +1,4 @@
-/* Center the modal properly */
-.modal-dialog {
+Center the modal properly .modal-dialog {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,10 +16,18 @@
 .spinner-border {
   width: 3rem;
   height: 3rem;
-  border-width: 0.25em;
+  border-width: 0.45em;
   margin: 1rem 0;
 }
-
+@media (prefers-reduced-motion: no-preference) {
+  .modal.fade .modal-content {
+    transform: scale(0.95);
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  }
+}
+.modal.show .modal-content {
+  transform: scale(1);
+}
 /* Ensuring the modal takes the full screen */
 .modal-backdrop {
   position: fixed;
