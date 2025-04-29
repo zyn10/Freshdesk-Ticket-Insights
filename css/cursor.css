@@ -1,8 +1,7 @@
-/* Main Red Dot Cursor */
 .custom-cursor {
   position: fixed;
-  width: 0.6vw;
-  height: 0.6vw;
+  width: 0.4vw;
+  height: 0.4vw;
   background-color: red;
   border-radius: 50%;
   pointer-events: none;
@@ -11,16 +10,15 @@
   z-index: 9999;
 }
 
-/* Outer Red Circle with Delay */
 .cursor-outline {
   position: fixed;
-  width: 5vw;
-  height: 5vw;
+  width: 2vw;
+  height: 2vw;
   border: 0.15vw solid red;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.15s ease-out;
-  z-index: 9998;
+  z-index: 4998;
   opacity: 0.7;
 }
