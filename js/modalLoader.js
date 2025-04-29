@@ -1,18 +1,18 @@
-// modalLoader.js
 export async function loadProcessingModal() {
-  const res = await fetch("processingModal.html");
-  const html = await res.text();
-  document.getElementById("modalContainer").innerHTML = html;
-}
+  try {
+    const res = await fetch("popupModal.html");
+    if (!res.ok) throw new Error("Failed to fetch modal HTML");
 
-export function showModal(fileName = "Loading...") {
-  const modal = new bootstrap.Modal(document.getElementById("processingModal"));
-  document.getElementById("fileNameDisplay").textContent = fileName;
-  modal.show();
-}
+    const html = await res.text();
+    const modalContainer = document.getElementById("modalContainer");
 
-export function hideModal() {
-  const modalElement = document.getElementById("processingModal");
-  const modalInstance = bootstrap.Modal.getInstance(modalElement);
-  if (modalInstance) modalInstance.hide();
+    if (!modalContainer) {
+      console.error('Element with id "modalContainer" not found.');
+      return;
+    }
+
+    modalContainer.innerHTML = html;
+  } catch (error) {
+    console.error("Error loading processing modal:", error);
+  }
 }

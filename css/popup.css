@@ -16,7 +16,7 @@ Center the modal properly .modal-dialog {
 .spinner-border {
   width: 3rem;
   height: 3rem;
-  border-width: 0.45em;
+  border-width: 0.25em;
   margin: 1rem 0;
 }
 @media (prefers-reduced-motion: no-preference) {
