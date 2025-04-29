@@ -74,4 +74,3 @@ function showLoadingModal(file) {
   document.getElementById("fileNameDisplay").textContent = `File: ${file.name}`;
   modal.show();
 }
-w;

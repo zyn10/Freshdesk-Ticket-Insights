@@ -1,3 +1,6 @@
+// js/viewer.js
+import { setupPagination } from "./pagination.js";
+
 export function renderTableFromStorage() {
   const data = JSON.parse(localStorage.getItem("parsedData"));
   const table = document.getElementById("dataTable");
@@ -7,6 +10,7 @@ export function renderTableFromStorage() {
     return;
   }
 
+  // Render table header (same as before)
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
   data[0].forEach((header) => {
@@ -17,15 +21,27 @@ export function renderTableFromStorage() {
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
-  const tbody = document.createElement("tbody");
-  data.slice(1).forEach((row) => {
-    const tr = document.createElement("tr");
-    row.forEach((cell) => {
-      const td = document.createElement("td");
-      td.textContent = cell?.trim?.() || "";
-      tr.appendChild(td);
-    });
-    tbody.appendChild(tr);
+  const rowsData = data.slice(1);
+
+  // Initialize pagination
+  setupPagination({
+    data: rowsData,
+    rowsPerPage: 5, // Adjust rows per page as needed
+    onPageChange: (pageData) => {
+      // Render rows for the current page
+      const tbody = document.createElement("tbody");
+      pageData.forEach((row) => {
+        const tr = document.createElement("tr");
+        row.forEach((cell) => {
+          const td = document.createElement("td");
+          td.textContent = cell?.trim?.() || "";
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      // Clear previous table body and add new one
+      table.querySelector("tbody")?.remove();
+      table.appendChild(tbody);
+    },
   });
-  table.appendChild(tbody);
 }

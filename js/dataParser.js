@@ -24,7 +24,29 @@ export function parseAndStoreFile(file) {
       return;
     }
 
-    localStorage.setItem("parsedData", JSON.stringify(rows));
+    // ✅ Columns you want to keep
+    const columnsToKeep = [
+      "Ticket ID",
+      "Subject",
+      "Status",
+      "Priority",
+      "Created time",
+      "Resolution time (in hrs)",
+      "Customer interactions",
+    ];
+
+    // ✅ Reduce the data
+    const headerRow = rows[0];
+    const dataRows = rows.slice(1);
+    const indicesToKeep = columnsToKeep.map((col) => headerRow.indexOf(col));
+
+    const reducedRows = [
+      columnsToKeep,
+      ...dataRows.map((row) => indicesToKeep.map((i) => row[i] ?? "")),
+    ];
+
+    // ✅ Store reduced data
+    localStorage.setItem("parsedData", JSON.stringify(reducedRows));
   };
 
   if (isCSV) {

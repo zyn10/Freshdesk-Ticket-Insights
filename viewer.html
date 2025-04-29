@@ -2,20 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Parsed File Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Viewer | Parsed File Analysis</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/table.css" />
   </head>
   <body>
-    <div class="container mt-5">
-      <h2>Uploaded File Data</h2>
-      <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable"></table>
+    <div class="container-fluid app-container">
+      <div class="card main-card shadow-lg">
+        <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">
+              <i class="fas fa-table me-2"></i>Uploaded File Data
+            </h4>
+            <div
+              class="badge bg-primary bg-opacity-10 text-primary fs-6 px-3 py-2"
+            >
+              v1.0.0
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table
+              class="table table-hover align-middle"
+              id="dataTable"
+            ></table>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-between align-items-center">
+            <button
+              class="btn btn-outline-primary btn-pagination"
+              id="prevPage"
+            >
+              <i class="fas fa-chevron-left me-1"></i> Previous
+            </button>
+            <span id="pageInfo" class="text-muted fw-semibold"
+              >Page 1 of 10</span
+            >
+            <button class="btn btn-primary btn-pagination" id="nextPage">
+              Next <i class="fas fa-chevron-right ms-1"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="main.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
   </body>
 </html>
