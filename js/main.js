@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeFileHandlers();
 
     if (isViewerPage()) {
+      initCursor();
       renderTableFromStorage();
     }
   } catch (error) {
