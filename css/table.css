@@ -19,8 +19,8 @@ body {
 }
 
 .app-container {
-  width: 100%;
-  max-width: 1200px;
+  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
