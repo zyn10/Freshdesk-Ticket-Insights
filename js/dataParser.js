@@ -22,8 +22,6 @@ export function parseAndStoreFile(file) {
       alert("Unsupported file type");
       return;
     }
-
-    // ✅ Columns you want to keep
     const columnsToKeep = [
       "Ticket ID",
       "Subject",

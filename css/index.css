@@ -1,0 +1,214 @@
+/* Global Reset and Body Styling */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Manrope", sans-serif;
+  background-color: #f8f9fa; /* Background color for the screen */
+  color: #2c3e50;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  margin: 0; /* Remove margins to center it */
+  font-weight: 700;
+  color: #34495e;
+}
+
+/* Upload Box Styling */
+.upload-box {
+  background: rgba(255, 255, 255, 0.891);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0px 0.3rem 1.5rem rgba(0, 0, 0, 0.05);
+  width: 40vw;
+  border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-box:hover {
+  transform: translateY(-0.3rem);
+}
+
+/* Drop Area Styling */
+.drop-area {
+  padding: 2rem;
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0.15rem solid rgba(0, 123, 255, 0.2);
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.drop-area:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.15rem solid rgba(0, 123, 255, 0.4);
+}
+
+/* Modal and Spinner Styling */
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.modal-content {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.25em;
+  margin: 1rem 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .modal.fade .modal-content {
+    transform: scale(0.95);
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  }
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+/* Ensuring the modal takes the full screen */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Cursor Styling */
+body,
+button,
+input,
+textarea,
+a {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 0.4vw;
+  height: 0.4vw;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease-out;
+  z-index: 9999;
+}
+
+.cursor-outline {
+  position: fixed;
+  width: 2vw;
+  height: 2vw;
+  border: 0.15vw solid red;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
+  z-index: 4998;
+  opacity: 0.7;
+}
+
+/* Responsive Design for Various Screen Sizes */
+@media (max-width: 1024px) {
+  .upload-box {
+    width: 60vw;
+  }
+
+  .custom-cursor {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+
+  .cursor-outline {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .upload-box {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+
+  .custom-cursor {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+
+  .cursor-outline {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-box {
+    width: 90vw;
+    padding: 1rem;
+  }
+
+  .custom-cursor {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+
+  .cursor-outline {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .charts-grid {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+
+  .chart-container {
+    height: 340px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: repeat(1, minmax(280px, 1fr));
+  }
+
+  .chart-container {
+    height: 360px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  .chart-container {
+    height: 380px;
+  }
+}

@@ -1,8 +1,9 @@
-Center the modal properly .modal-dialog {
+.modal-dialog {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
+  margin: 0 auto;
 }
 
 .modal-content {
@@ -10,15 +11,19 @@ Center the modal properly .modal-dialog {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Avoid full-width on desktop */
 }
 
-/* Styling for the spinner */
+/* Spinner styling */
 .spinner-border {
   width: 3rem;
   height: 3rem;
   border-width: 0.25em;
   margin: 1rem 0;
 }
+
+/* Animation */
 @media (prefers-reduced-motion: no-preference) {
   .modal.fade .modal-content {
     transform: scale(0.95);
@@ -28,7 +33,8 @@ Center the modal properly .modal-dialog {
 .modal.show .modal-content {
   transform: scale(1);
 }
-/* Ensuring the modal takes the full screen */
+
+/* Full-screen backdrop */
 .modal-backdrop {
   position: fixed;
   top: 0;

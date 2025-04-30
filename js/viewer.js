@@ -1,4 +1,3 @@
-// js/viewer.js
 import { setupPagination } from "./pagination.js";
 
 export function renderTableFromStorage() {
@@ -22,9 +21,22 @@ export function renderTableFromStorage() {
 
   const rowsData = data.slice(1);
 
+  function getRowsPerPage() {
+    const width = window.innerWidth;
+    if (width >= 1500) {
+      return 10;
+    } else if (width >= 1200) {
+      return 7;
+    } else if (width >= 768) {
+      return 5;
+    }
+  }
+
+  const rowsPerPage = getRowsPerPage();
+
   setupPagination({
     data: rowsData,
-    rowsPerPage: 10,
+    rowsPerPage: rowsPerPage,
     onPageChange: (pageData) => {
       const tbody = document.createElement("tbody");
       pageData.forEach((row) => {
@@ -36,7 +48,6 @@ export function renderTableFromStorage() {
         });
         tbody.appendChild(tr);
       });
-      // Clear previous table body and add new one
       table.querySelector("tbody")?.remove();
       table.appendChild(tbody);
     },
