@@ -7,7 +7,7 @@ export function renderTopClients() {
   // Clear and inject canvas + chart title container
   container.innerHTML = `
     <div style="height: 500px; display: flex; flex-direction: column;">
-      <div style="text-align: center; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">
+      <div style="text-align: center; font-weight: 600; font-size: 1.8rem; margin-bottom: 1rem;">
         Top 5 Clients by Total Ticket Priority
       </div>
       <canvas id="myChart" style="flex-grow: 1;"></canvas>
@@ -54,8 +54,8 @@ export function renderTopClients() {
     label: level,
     data: topClients.map((client) => client[level]),
     backgroundColor: chartColors[i],
-    barPercentage: 0.5,
-    categoryPercentage: 0.6,
+    barPercentage: 0.8,
+    categoryPercentage: 0.8,
   }));
 
   new Chart(ctx, {
@@ -67,7 +67,7 @@ export function renderTopClients() {
       maintainAspectRatio: false,
       layout: {
         padding: {
-          right: 30,
+          right: 25,
         },
       },
       scales: {
@@ -84,8 +84,8 @@ export function renderTopClients() {
       },
       plugins: {
         datalabels: {
-          color: "#fff",
-          font: { weight: "bold", size: 12 },
+          color: "#000",
+          font: { weight: "bold", size: 2 },
           display: (ctx) => ctx.dataset.data[ctx.dataIndex] > 0,
           formatter: (value) => (value > 0 ? value : ""),
         },
@@ -93,7 +93,7 @@ export function renderTopClients() {
           position: "bottom",
           labels: {
             color: "#333",
-            font: { size: 12 },
+            font: { size: 50 },
             usePointStyle: true, // <--- enable point style
             pointStyle: "circle", // <--- make it a circle
             padding: 20, // optional: space around each legend item
@@ -104,11 +104,11 @@ export function renderTopClients() {
           display: false,
         },
       },
-
+      //individual counts of each priority level
       plugins: {
         datalabels: {
           color: "#fff",
-          font: { weight: "bold", size: 12 },
+          font: { weight: "bold", size: 14 },
           display: (ctx) => ctx.dataset.data[ctx.dataIndex] > 0,
           formatter: (value) => (value > 0 ? value : ""),
         },
@@ -116,7 +116,7 @@ export function renderTopClients() {
           position: "bottom",
           labels: {
             color: "#333",
-            font: { size: 12 },
+            font: { size: 16 },
             usePointStyle: true,
             pointStyle: "circle",
             padding: 20,
@@ -127,6 +127,7 @@ export function renderTopClients() {
         },
       },
     },
+    //total counts of each client
     plugins: [
       {
         id: "showTotals",
@@ -138,7 +139,7 @@ export function renderTopClients() {
             scales: { x, y },
           } = chart;
 
-          ctx.font = "bold 12px Arial";
+          ctx.font = "bold 14px Arial";
           ctx.textAlign = "left";
           ctx.fillStyle = "#333";
 

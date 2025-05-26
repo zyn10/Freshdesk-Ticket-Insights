@@ -8,16 +8,6 @@ export function renderTicketsByStatus() {
     return null;
   }
 
-  container.innerHTML = `
-    <div style="height: 500px; display: flex; flex-direction: column;">
-      <div style="text-align: center; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">
-        Tickets by Status
-      </div>
-      <canvas id="statusChart" style="flex-grow: 1;"></canvas>
-    </div>
-  `;
-
-  const ctx = container.querySelector("#statusChart").getContext("2d");
   const data = sharedData.get();
 
   if (!data || !data.ticketsByStatus) {
@@ -25,22 +15,59 @@ export function renderTicketsByStatus() {
     return null;
   }
 
-  // Prepare chart data sorted descending
-  const entries = data.ticketsByStatus.labels
-    .map((label, i) => [label, data.ticketsByStatus.values[i]])
-    .sort((a, b) => b[1] - a[1]);
+  // Calculate total tickets
+  const totalTickets = data.ticketsByStatus.values.reduce(
+    (acc, val) => acc + val,
+    0
+  );
+
+  // Combine Resolved and Closed into Completed
+  const combinedData = {};
+  let completedCount = 0;
+
+  data.ticketsByStatus.labels.forEach((label, i) => {
+    const count = data.ticketsByStatus.values[i];
+    if (label === "Resolved" || label === "Closed") {
+      completedCount += count;
+    } else {
+      combinedData[label] = count;
+    }
+  });
+
+  if (completedCount > 0) {
+    combinedData["Resolved/Closed"] = completedCount;
+  }
+
+  const entries = Object.entries(combinedData).sort((a, b) => b[1] - a[1]);
 
   const labels = entries.map((e) => e[0]);
   const counts = entries.map((e) => e[1]);
 
   const colors = {
     Open: "#e97132",
-    "In Progress": "#ff0000",
-    Pending: "#0e9ed5",
-    Resolved: "#8ed973",
-    Closed: "#9966FF",
-    Reopened: "#FFCE56",
+    "Waiting on ThingTrax": "#ff0000",
+    "Waiting on Customer": "#0e9ed5",
+    "Fixed/Waiting for Release": "#8ed973",
+    "Resolved/Closed": "#9966FF",
+    "Resloved/Testing Phase": "#FFCE56",
   };
+
+  const maxCount = Math.max(...counts);
+
+  // Render container with total tickets count above the title
+  container.innerHTML = `
+    <div style="height: 500px; display: flex; flex-direction: column;">
+      <div style="text-align: center; font-weight: 600; font-size: 1.8rem; margin-bottom: 0.5rem;">
+        Tickets by Status
+      </div>
+      <div style="text-align: center; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; color: #555;">
+        Total Tickets: <span style="color: #e97132; font-size: 1rem;">${totalTickets}</span>
+      </div>
+      <canvas id="statusChart" style="flex-grow: 1;"></canvas>
+    </div>
+  `;
+
+  const ctx = container.querySelector("#statusChart").getContext("2d");
 
   return new Chart(ctx, {
     type: "bar",
@@ -48,10 +75,10 @@ export function renderTicketsByStatus() {
       labels,
       datasets: [
         {
-          label: "Tickets Count",
+          label: `Tickets Count`,
           data: counts,
           backgroundColor: labels.map((l) => colors[l] || "#ccc"),
-          barPercentage: 0.5,
+          barPercentage: 1,
           categoryPercentage: 0.6,
         },
       ],
@@ -63,6 +90,7 @@ export function renderTicketsByStatus() {
       scales: {
         x: {
           beginAtZero: true,
+          max: maxCount * 1.1,
           grid: { display: false },
           ticks: { display: false },
         },
@@ -70,19 +98,21 @@ export function renderTicketsByStatus() {
       },
       plugins: {
         datalabels: {
-          color: "#fff",
-          font: { weight: "bold", size: 12 },
+          color: "#000",
+          font: { weight: "bold", size: 14 },
           display: (ctx) => ctx.dataset.data[ctx.dataIndex] > 0,
           formatter: (value) => (value > 0 ? value : ""),
           anchor: "end",
-          align: "start",
+          align: "right",
+          clamp: true,
+          offset: 6,
         },
         legend: {
           display: true,
           position: "bottom",
           labels: {
             color: "#333",
-            font: { size: 12 },
+            font: { size: 14 },
             usePointStyle: true,
             pointStyle: "circle",
             padding: 20,
