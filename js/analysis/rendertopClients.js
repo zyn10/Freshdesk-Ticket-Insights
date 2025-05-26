@@ -7,13 +7,12 @@ export function renderTopClients() {
   // Clear and inject canvas + chart title container
   container.innerHTML = `
     <div style="height: 500px; display: flex; flex-direction: column;">
-      <div style="text-align: center; font-weight: 600; font-size: 1.8rem; margin-bottom: 1rem;">
+      <div style="text-align: center;color='#191919' font-weight: 500; font-size: 1.5rem; margin-bottom: 1rem;">
         Top 5 Clients by Total Ticket Priority
       </div>
       <canvas id="myChart" style="flex-grow: 1;"></canvas>
     </div>
   `;
-
   const ctx = document.getElementById("myChart").getContext("2d");
   const data = sharedData.get();
 

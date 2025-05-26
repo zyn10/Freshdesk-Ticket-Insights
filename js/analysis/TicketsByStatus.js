@@ -54,13 +54,12 @@ export function renderTicketsByStatus() {
 
   const maxCount = Math.max(...counts);
 
-  // Render container with total tickets count above the title
   container.innerHTML = `
     <div style="height: 500px; display: flex; flex-direction: column;">
       <div style="text-align: center; font-weight: 600; font-size: 1.8rem; margin-bottom: 0.5rem;">
         Tickets by Status
       </div>
-      <div style="text-align: center; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; color: #555;">
+      <div style="text-align: center; font-weight: 600; font-size: 1rem; color: #555;">
         Total Tickets: <span style="color: #e97132; font-size: 1rem;">${totalTickets}</span>
       </div>
       <canvas id="statusChart" style="flex-grow: 1;"></canvas>

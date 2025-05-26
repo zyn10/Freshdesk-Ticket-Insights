@@ -13,47 +13,65 @@
   <body>
     <div class="container-fluid py-4">
       <div class="row">
-        <!-- Sidebar Tabs for Filters -->
         <div class="col-md-3 mb-3">
           <div class="list-group" id="vizFilterTabs">
             <button
               class="list-group-item list-group-item-action active"
-              data-filter="topClients"
+              data-filter="ticketsBacklogUnresolved"
             >
-              Top 5 Clients by Priority
+              Backlog of Unresolved Tickets
             </button>
-
             <button
               class="list-group-item list-group-item-action"
-              data-filter="ticketCountByDay"
+              data-filter="ticketsCountByPriority"
             >
-              Ticket Count by Day
+              Count of Tickets by Priority
             </button>
-
             <button
               class="list-group-item list-group-item-action"
-              data-filter="ticketsByStatus"
+              data-filter="ticketsCountUnresolvedByCategory"
             >
-              Tickets by Status
+              Count of Unresolved Tickets by Work Category
             </button>
-
             <button
               class="list-group-item list-group-item-action"
-              data-filter="unresolvedByType"
+              data-filter="ticketsCountByStatus"
             >
-              Unresolved by Type
+              Count of Tickets by Status
             </button>
-
             <button
               class="list-group-item list-group-item-action"
-              data-filter="unresolvedByCustomer"
+              data-filter="ticketsTopClientsByPriorityResolved"
             >
-              Unresolved by Customer
+              Top 5 Clients by Resolved Tickets Priority
+            </button>
+            <button
+              class="list-group-item list-group-item-action"
+              data-filter="ticketsUnresolvedByType"
+            >
+              Unresolved Tickets by Type
+            </button>
+            <button
+              class="list-group-item list-group-item-action"
+              data-filter="ticketsUnresolvedByCustomerPriority"
+            >
+              Unresolved Tickets by Customer with Priority
+            </button>
+            <button
+              class="list-group-item list-group-item-action"
+              data-filter="ticketsResolvedByCustomer"
+            >
+              Resolved Tickets by Customer
+            </button>
+            <button
+              class="list-group-item list-group-item-action"
+              data-filter="ticketsUnresolvedByCustomer"
+            >
+              Unresolved Tickets by Customer
             </button>
           </div>
         </div>
 
-        <!-- Chart Display Area -->
         <div class="col-md-9">
           <div class="card shadow-sm">
             <div class="card-body">

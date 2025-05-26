@@ -1,15 +1,13 @@
 import { sharedData } from "./sharedData.js";
 import { renderTopClients } from "./analysis/rendertopClients.js";
 import { renderTicketsByStatus } from "./analysis/TicketsByStatus.js";
-// import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
+//import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
 // import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
 
-// 🔧 CSV Preprocessing Logic
 function processCSV(rawData) {
   const [headers, ...rows] = rawData;
   console.log("CSV Headers:", headers);
 
-  // Normalize headers to lowercase and trim spaces
   const normalizedHeaders = headers.map((h) => h.trim().toLowerCase());
 
   const priorityIndex = normalizedHeaders.indexOf("priority");
@@ -32,7 +30,6 @@ function processCSV(rawData) {
     const priority = row[priorityIndex]?.trim() || "Low";
     const status = row[statusIndex]?.trim() || "Unknown";
 
-    // Top Clients Map
     if (!clientMap[client]) {
       clientMap[client] = { Urgent: 0, High: 0, Medium: 0, Low: 0 };
     }
@@ -43,7 +40,6 @@ function processCSV(rawData) {
     else if (normalized.includes("med")) clientMap[client].Medium += 1;
     else clientMap[client].Low += 1;
 
-    // Status Map
     if (!statusMap[status]) {
       statusMap[status] = 0;
     }
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Processed from CSV:", processed);
     sharedData.set(processed);
   } else {
-    // 👇 Repair data if incomplete
     if (!parsed.ticketsByStatus || !parsed.topClientsByPriority) {
       console.warn("Missing keys in saved data. Reprocessing...");
       const fallbackRaw = parsed.rawData || parsed.data || [];
@@ -104,9 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         case "topClients":
           renderTopClients();
           break;
-        case "ticketCountByDay":
-          // renderTicketCountByDay();
-          break;
         case "ticketsByStatus":
           renderTicketsByStatus();
           break;
@@ -120,5 +112,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  renderTopClients(); // Default chart
+  renderTopClients();
 });

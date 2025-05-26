@@ -20,7 +20,7 @@ body {
   padding: 2rem 3rem;
   display: flex;
   gap: 2.5rem;
-  height: 500px;
+  height: 600px;
 }
 
 #vizFilterTabs {
@@ -91,7 +91,7 @@ body {
 
 .card-body {
   padding: 1.5rem 2rem;
-  height: 600px;
+  height: 100%;
 }
 
 .chart-container {
@@ -137,6 +137,6 @@ body {
 
   .chart-container {
     width: 100%;
-    min-height: 300px;
+    min-height: 100%;
   }
 }
