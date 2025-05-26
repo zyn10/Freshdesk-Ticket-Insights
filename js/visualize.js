@@ -1,22 +1,38 @@
 import { sharedData } from "./sharedData.js";
 import { renderTopClients } from "./analysis/rendertopClients.js";
-import { renderTicketCountByDay } from "./analysis/TicketCountByDay.js";
-// import { renderTicketsByStatus } from "./analysis/ticketsByStatus.js";
+import { renderTicketsByStatus } from "./analysis/TicketsByStatus.js";
 // import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
 // import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
 
 // 🔧 CSV Preprocessing Logic
 function processCSV(rawData) {
   const [headers, ...rows] = rawData;
-  const priorityIndex = headers.indexOf("Priority");
-  const tagsIndex = headers.indexOf("Tags");
+  console.log("CSV Headers:", headers);
+
+  // Normalize headers to lowercase and trim spaces
+  const normalizedHeaders = headers.map((h) => h.trim().toLowerCase());
+
+  const priorityIndex = normalizedHeaders.indexOf("priority");
+  const tagsIndex = normalizedHeaders.indexOf("tags");
+  const statusIndex = normalizedHeaders.indexOf("status");
+
+  if (priorityIndex === -1 || tagsIndex === -1 || statusIndex === -1) {
+    alert("Missing one or more required columns: Priority, Tags, Status");
+    return {
+      topClientsByPriority: { labels: [], values: [] },
+      ticketsByStatus: { labels: [], values: [] },
+    };
+  }
 
   const clientMap = {};
+  const statusMap = {};
 
   rows.forEach((row) => {
-    const client = row[tagsIndex] || "Unknown";
-    const priority = row[priorityIndex] || "Low";
+    const client = row[tagsIndex]?.trim() || "Unknown";
+    const priority = row[priorityIndex]?.trim() || "Low";
+    const status = row[statusIndex]?.trim() || "Unknown";
 
+    // Top Clients Map
     if (!clientMap[client]) {
       clientMap[client] = { Urgent: 0, High: 0, Medium: 0, Low: 0 };
     }
@@ -26,15 +42,28 @@ function processCSV(rawData) {
     else if (normalized.includes("high")) clientMap[client].High += 1;
     else if (normalized.includes("med")) clientMap[client].Medium += 1;
     else clientMap[client].Low += 1;
+
+    // Status Map
+    if (!statusMap[status]) {
+      statusMap[status] = 0;
+    }
+    statusMap[status] += 1;
   });
 
   const labels = Object.keys(clientMap);
   const values = Object.values(clientMap);
 
+  const statusLabels = Object.keys(statusMap);
+  const statusValues = Object.values(statusMap);
+
   return {
     topClientsByPriority: {
       labels,
       values,
+    },
+    ticketsByStatus: {
+      labels: statusLabels,
+      values: statusValues,
     },
   };
 }
@@ -45,12 +74,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const parsed = JSON.parse(raw);
 
-  // Determine if raw CSV array or already processed JSON
   if (Array.isArray(parsed[0])) {
     const processed = processCSV(parsed);
+    console.log("Processed from CSV:", processed);
     sharedData.set(processed);
   } else {
-    sharedData.set(parsed);
+    // 👇 Repair data if incomplete
+    if (!parsed.ticketsByStatus || !parsed.topClientsByPriority) {
+      console.warn("Missing keys in saved data. Reprocessing...");
+      const fallbackRaw = parsed.rawData || parsed.data || [];
+      const processed = processCSV(fallbackRaw);
+      sharedData.set(processed);
+    } else {
+      console.log("Loaded parsed data:", parsed);
+      sharedData.set(parsed);
+    }
   }
 
   const tabButtons = document.querySelectorAll("#vizFilterTabs button");
@@ -67,16 +105,16 @@ document.addEventListener("DOMContentLoaded", () => {
           renderTopClients();
           break;
         case "ticketCountByDay":
-          renderTicketCountByDay();
+          // renderTicketCountByDay();
           break;
         case "ticketsByStatus":
           renderTicketsByStatus();
           break;
         case "unresolvedByType":
-          renderUnresolvedByType();
+          // renderUnresolvedByType();
           break;
         case "unresolvedByCustomer":
-          renderUnresolvedByCustomer();
+          // renderUnresolvedByCustomer();
           break;
       }
     });
