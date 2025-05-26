@@ -1,14 +1,19 @@
-import ChartDataLabels from "chartjs-plugin-datalabels";
 import { sharedData } from "../sharedData.js";
 
-Chart.register(ChartDataLabels);
+Chart.register(window.ChartDataLabels);
 
 export function renderTicketCountByDay() {
   const container = document.getElementById("chartContainer");
   container.innerHTML = '<canvas id="myChart"></canvas>';
 
   const ctx = document.getElementById("myChart").getContext("2d");
-  const data = sharedData.get().ticketCountByDay;
+
+  const data = sharedData.get()?.ticketCountByDay;
+
+  if (!data) {
+    container.innerHTML = "<p>No data available.</p>";
+    return;
+  }
 
   new Chart(ctx, {
     type: "bar",

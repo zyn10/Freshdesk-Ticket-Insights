@@ -1,6 +1,6 @@
 import { sharedData } from "./sharedData.js";
 import { renderTopClients } from "./analysis/rendertopClients.js";
-// import { renderTicketCountByDay } from "./analysis/ticketCountByDay.js";
+import { renderTicketCountByDay } from "./analysis/TicketCountByDay.js";
 // import { renderTicketsByStatus } from "./analysis/ticketsByStatus.js";
 // import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
 // import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
