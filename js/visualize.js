@@ -1,6 +1,7 @@
 import { sharedData } from "./sharedData.js";
 import { renderTopClients } from "./analysis/rendertopClients.js";
 import { renderTicketsByStatus } from "./analysis/TicketsByStatus.js";
+import { renderUnresolvedPriority } from "./analysis/1_ticketsByUnresolvedPriority.js";
 //import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
 // import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
 
@@ -108,9 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
         case "unresolvedByCustomer":
           // renderUnresolvedByCustomer();
           break;
+        case "ticketsCountByPriority":
+          renderUnresolvedPriority();
+          break;
       }
     });
   });
 
-  renderTopClients();
+  renderUnresolvedPriority();
 });
