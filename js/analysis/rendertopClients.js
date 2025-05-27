@@ -6,11 +6,11 @@ export function renderTopClients() {
 
   // Clear and inject canvas + chart title container
   container.innerHTML = `
-    <div style="height: 500px; display: flex; flex-direction: column;">
-      <div style="text-align: center;color='#191919' font-weight: 500; font-size: 1.5rem; margin-bottom: 1rem;">
+    <div style="height: 500px; display: flex; flex-direction: column;margin-top: 2rem;">
+      <div style="text-align: center;color='#191919'; font-weight:600; font-size: 2rem; margin-bottom: 1rem;">
         Top 5 Clients by Total Ticket Priority
       </div>
-      <canvas id="myChart" style="flex-grow: 1;"></canvas>
+      <canvas id="myChart" style="flex-grow: 1;margin-top: 3rem;"></canvas>
     </div>
   `;
   const ctx = document.getElementById("myChart").getContext("2d");

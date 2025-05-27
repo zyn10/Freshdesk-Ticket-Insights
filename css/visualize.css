@@ -79,6 +79,7 @@ body {
   border: none;
   box-shadow: 0 14px 32px rgb(0 123 255 / 0.12);
   background-color: #fff;
+  height: 100%;
 }
 
 .card-header {
@@ -90,6 +91,7 @@ body {
 }
 
 .card-body {
+  padding-top: 60%;
   padding: 1.5rem 2rem;
   height: 100%;
 }
