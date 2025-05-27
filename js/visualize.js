@@ -1,7 +1,8 @@
 import { sharedData } from "./sharedData.js";
 import { renderTopClients } from "./analysis/rendertopClients.js";
 import { renderTicketsByStatus } from "./analysis/TicketsByStatus.js";
-import { renderUnresolvedPriority } from "./analysis/1_ticketsByUnresolvedPriority.js";
+import { renderUnresolvedPriority } from "./analysis/3_UnresolvedPriority.js";
+import { renderCountUnresolvedByCategory } from "./analysis/4_UnresolvedWorkCategory.js";
 //import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
 // import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
 
@@ -14,23 +15,35 @@ function processCSV(rawData) {
   const priorityIndex = normalizedHeaders.indexOf("priority");
   const tagsIndex = normalizedHeaders.indexOf("tags");
   const statusIndex = normalizedHeaders.indexOf("status");
+  const groupIndex = normalizedHeaders.indexOf("group"); // ← Work Category column
 
-  if (priorityIndex === -1 || tagsIndex === -1 || statusIndex === -1) {
-    alert("Missing one or more required columns: Priority, Tags, Status");
+  if (
+    priorityIndex === -1 ||
+    tagsIndex === -1 ||
+    statusIndex === -1 ||
+    groupIndex === -1
+  ) {
+    alert(
+      "Missing one or more required columns: Priority, Tags, Status, Group"
+    );
     return {
       topClientsByPriority: { labels: [], values: [] },
       ticketsByStatus: { labels: [], values: [] },
+      ticketsCountUnresolvedByCategory: { labels: [], values: [] }, // prevent crashing
     };
   }
 
   const clientMap = {};
   const statusMap = {};
+  const unresolvedCategoryMap = {};
 
   rows.forEach((row) => {
     const client = row[tagsIndex]?.trim() || "Unknown";
     const priority = row[priorityIndex]?.trim() || "Low";
-    const status = row[statusIndex]?.trim() || "Unknown";
+    const status = row[statusIndex]?.trim().toLowerCase();
+    const group = row[groupIndex]?.trim() || "Unknown";
 
+    // Top clients
     if (!clientMap[client]) {
       clientMap[client] = { Urgent: 0, High: 0, Medium: 0, Low: 0 };
     }
@@ -41,26 +54,54 @@ function processCSV(rawData) {
     else if (normalized.includes("med")) clientMap[client].Medium += 1;
     else clientMap[client].Low += 1;
 
+    // Ticket status counts
     if (!statusMap[status]) {
       statusMap[status] = 0;
     }
     statusMap[status] += 1;
+
+    // Count unresolved tickets by category
+    if (!["solved", "closed", "resolved"].some((s) => status.includes(s))) {
+      if (!unresolvedCategoryMap[group]) {
+        unresolvedCategoryMap[group] = {
+          Urgent: 0,
+          High: 0,
+          Medium: 0,
+          Low: 0,
+        };
+      }
+
+      if (normalized.includes("urgent"))
+        unresolvedCategoryMap[group].Urgent += 1;
+      else if (normalized.includes("high"))
+        unresolvedCategoryMap[group].High += 1;
+      else if (normalized.includes("med"))
+        unresolvedCategoryMap[group].Medium += 1;
+      else unresolvedCategoryMap[group].Low += 1;
+    }
   });
 
-  const labels = Object.keys(clientMap);
-  const values = Object.values(clientMap);
+  const topClientLabels = Object.keys(clientMap);
+  const topClientValues = Object.values(clientMap);
 
   const statusLabels = Object.keys(statusMap);
   const statusValues = Object.values(statusMap);
 
+  const categoryLabels = Object.keys(unresolvedCategoryMap);
+  const categoryValues = Object.values(unresolvedCategoryMap);
+
   return {
     topClientsByPriority: {
-      labels,
-      values,
+      labels: topClientLabels,
+      values: topClientValues,
     },
     ticketsByStatus: {
       labels: statusLabels,
       values: statusValues,
+    },
+    ticketsCountUnresolvedByCategory: {
+      labels: categoryLabels,
+      values: categoryValues,
     },
   };
 }
@@ -97,6 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const type = btn.getAttribute("data-filter");
 
       switch (type) {
+        case "ticketsCountByPriority":
+          renderUnresolvedPriority();
+          break;
+        case "unresolvedByCategory":
+          renderCountUnresolvedByCategory();
+          break;
         case "topClients":
           renderTopClients();
           break;
@@ -109,12 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
         case "unresolvedByCustomer":
           // renderUnresolvedByCustomer();
           break;
-        case "ticketsCountByPriority":
-          renderUnresolvedPriority();
-          break;
       }
     });
   });
 
-  renderUnresolvedPriority();
+  renderCountUnresolvedByCategory();
 });
