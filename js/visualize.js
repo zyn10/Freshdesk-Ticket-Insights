@@ -1,6 +1,7 @@
 import { sharedData } from "./sharedData.js";
 import { renderUnresolvedPriority } from "./analysis/3_UnresolvedPriority.js";
 import { renderCountUnresolvedByCategory } from "./analysis/4_UnresolvedWorkCategory.js";
+import { renderTicketsByStatus } from "./analysis/5_TicketsByStatus.js";
 //import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
 // import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
 
@@ -142,12 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
         case "unresolvedByCategory":
           renderCountUnresolvedByCategory();
           break;
+        case "ticketsByStatus":
+          renderTicketsByStatus();
+          break;
         // case "topClients":
         //   renderTopClients();
         //   break;
-        // case "ticketsByStatus":
-        //   renderTicketsByStatus();
-        //   break;
+
         // case "unresolvedByType":
         //   // renderUnresolvedByType();
         //   break;
