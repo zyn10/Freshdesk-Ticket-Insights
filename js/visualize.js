@@ -1,6 +1,4 @@
 import { sharedData } from "./sharedData.js";
-import { renderTopClients } from "./analysis/rendertopClients.js";
-import { renderTicketsByStatus } from "./analysis/TicketsByStatus.js";
 import { renderUnresolvedPriority } from "./analysis/3_UnresolvedPriority.js";
 import { renderCountUnresolvedByCategory } from "./analysis/4_UnresolvedWorkCategory.js";
 //import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
@@ -144,21 +142,67 @@ document.addEventListener("DOMContentLoaded", () => {
         case "unresolvedByCategory":
           renderCountUnresolvedByCategory();
           break;
-        case "topClients":
-          renderTopClients();
-          break;
-        case "ticketsByStatus":
-          renderTicketsByStatus();
-          break;
-        case "unresolvedByType":
-          // renderUnresolvedByType();
-          break;
-        case "unresolvedByCustomer":
-          // renderUnresolvedByCustomer();
-          break;
+        // case "topClients":
+        //   renderTopClients();
+        //   break;
+        // case "ticketsByStatus":
+        //   renderTicketsByStatus();
+        //   break;
+        // case "unresolvedByType":
+        //   // renderUnresolvedByType();
+        //   break;
+        // case "unresolvedByCustomer":
+        //   // renderUnresolvedByCustomer();
+        //   break;
       }
     });
   });
 
-  renderCountUnresolvedByCategory();
+  renderUnresolvedPriority();
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const tabButtons = document.querySelectorAll("#vizFilterTabs button");
+
+  // Set default active on first tab if none active
+  if (
+    ![...tabButtons].some((b) => b.classList.contains("active")) &&
+    tabButtons.length > 0
+  ) {
+    tabButtons[0].classList.add("active");
+  }
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const type = btn.getAttribute("data-filter");
+
+      switch (type) {
+        case "unresolvedPriority":
+          renderUnresolvedPriority();
+          break;
+        case "ticketsCountUnresolvedByCategory":
+          renderCountUnresolvedByCategory();
+          break;
+        // add your other cases here
+        default:
+          console.log("Unknown filter:", type);
+      }
+    });
+  });
+
+  // Trigger default tab's render function
+  const activeBtn = document.querySelector("#vizFilterTabs button.active");
+  if (activeBtn) {
+    const defaultType = activeBtn.getAttribute("data-filter");
+    switch (defaultType) {
+      case "unresolvedPriority":
+        renderUnresolvedPriority();
+        break;
+      case "ticketsCountUnresolvedByCategory":
+        renderCountUnresolvedByCategory();
+        break;
+    }
+  }
 });
