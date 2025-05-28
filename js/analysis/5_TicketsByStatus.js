@@ -27,7 +27,7 @@ export function renderTicketsByStatus() {
 
   data.ticketsByStatus.labels.forEach((label, i) => {
     const count = data.ticketsByStatus.values[i];
-    if (label === "Resolved" || label === "Closed") {
+    if (label === "resolved" || label === "closed") {
       completedCount += count;
     } else {
       combinedData[label] = count;
@@ -44,12 +44,12 @@ export function renderTicketsByStatus() {
   const counts = entries.map((e) => e[1]);
 
   const colors = {
-    Open: "#e97132",
-    "Waiting on ThingTrax": "#ff0000",
-    "Waiting on Customer": "#0e9ed5",
-    "Fixed/Waiting for Release": "#8ed973",
+    open: "#e97132",
+    "waiting on thingtrax": "#ff0000",
+    "waiting on customer": "#0e9ed5",
+    "fixed/waiting for release": "#8ed973",
     "Resolved/Closed": "#9966FF",
-    "Resloved/Testing Phase": "#FFCE56",
+    "resloved/testing phase": "#FFCE56",
   };
 
   const maxCount = Math.max(...counts);

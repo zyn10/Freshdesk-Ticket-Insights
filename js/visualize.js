@@ -2,61 +2,34 @@ import { sharedData } from "./sharedData.js";
 import { renderUnresolvedPriority } from "./analysis/3_UnresolvedPriority.js";
 import { renderCountUnresolvedByCategory } from "./analysis/4_UnresolvedWorkCategory.js";
 import { renderTicketsByStatus } from "./analysis/5_TicketsByStatus.js";
-//import { renderUnresolvedByType } from "./analysis/unresolvedByType.js";
-// import { renderUnresolvedByCustomer } from "./analysis/unresolvedByCustomer.js";
 
 function processCSV(rawData) {
   const [headers, ...rows] = rawData;
-  console.log("CSV Headers:", headers);
 
   const normalizedHeaders = headers.map((h) => h.trim().toLowerCase());
-
   const priorityIndex = normalizedHeaders.indexOf("priority");
-  const tagsIndex = normalizedHeaders.indexOf("tags");
   const statusIndex = normalizedHeaders.indexOf("status");
-  const groupIndex = normalizedHeaders.indexOf("group"); // ← Work Category column
+  const groupIndex = normalizedHeaders.indexOf("group");
 
-  if (
-    priorityIndex === -1 ||
-    tagsIndex === -1 ||
-    statusIndex === -1 ||
-    groupIndex === -1
-  ) {
-    alert(
-      "Missing one or more required columns: Priority, Tags, Status, Group"
-    );
+  if (priorityIndex === -1 || statusIndex === -1 || groupIndex === -1) {
+    alert("Missing one or more required columns: Priority, Status, Group");
     return {
-      topClientsByPriority: { labels: [], values: [] },
       ticketsByStatus: { labels: [], values: [] },
-      ticketsCountUnresolvedByCategory: { labels: [], values: [] }, // prevent crashing
+      ticketsCountUnresolvedByCategory: { labels: [], values: [] },
     };
   }
 
-  const clientMap = {};
   const statusMap = {};
   const unresolvedCategoryMap = {};
+  const resolvedByClientMap = {};
 
   rows.forEach((row) => {
-    const client = row[tagsIndex]?.trim() || "Unknown";
     const priority = row[priorityIndex]?.trim() || "Low";
     const status = row[statusIndex]?.trim().toLowerCase();
     const group = row[groupIndex]?.trim() || "Unknown";
 
-    // Top clients
-    if (!clientMap[client]) {
-      clientMap[client] = { Urgent: 0, High: 0, Medium: 0, Low: 0 };
-    }
-
-    const normalized = priority.toLowerCase();
-    if (normalized.includes("urgent")) clientMap[client].Urgent += 1;
-    else if (normalized.includes("high")) clientMap[client].High += 1;
-    else if (normalized.includes("med")) clientMap[client].Medium += 1;
-    else clientMap[client].Low += 1;
-
-    // Ticket status counts
-    if (!statusMap[status]) {
-      statusMap[status] = 0;
-    }
+    // Count tickets by status
+    if (!statusMap[status]) statusMap[status] = 0;
     statusMap[status] += 1;
 
     // Count unresolved tickets by category
@@ -70,6 +43,7 @@ function processCSV(rawData) {
         };
       }
 
+      const normalized = priority.toLowerCase();
       if (normalized.includes("urgent"))
         unresolvedCategoryMap[group].Urgent += 1;
       else if (normalized.includes("high"))
@@ -80,27 +54,36 @@ function processCSV(rawData) {
     }
   });
 
-  const topClientLabels = Object.keys(clientMap);
-  const topClientValues = Object.values(clientMap);
+  // Sort statuses using preferred order
+  const preferredOrder = [
+    "new",
+    "open",
+    "pending",
+    "in progress",
+    "on hold",
+    "waiting",
+    "solved",
+    "resolved",
+    "closed",
+  ];
 
-  const statusLabels = Object.keys(statusMap);
-  const statusValues = Object.values(statusMap);
-
-  const categoryLabels = Object.keys(unresolvedCategoryMap);
-  const categoryValues = Object.values(unresolvedCategoryMap);
+  const sortedStatuses = Object.entries(statusMap).sort(([a], [b]) => {
+    const aIndex = preferredOrder.indexOf(a);
+    const bIndex = preferredOrder.indexOf(b);
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    return 0;
+  });
 
   return {
-    topClientsByPriority: {
-      labels: topClientLabels,
-      values: topClientValues,
-    },
     ticketsByStatus: {
-      labels: statusLabels,
-      values: statusValues,
+      labels: sortedStatuses.map(([s]) => s),
+      values: sortedStatuses.map(([, v]) => v),
     },
     ticketsCountUnresolvedByCategory: {
-      labels: categoryLabels,
-      values: categoryValues,
+      labels: Object.keys(unresolvedCategoryMap),
+      values: Object.values(unresolvedCategoryMap),
     },
   };
 }
@@ -110,34 +93,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!raw) return alert("No data found in storage.");
 
   const parsed = JSON.parse(raw);
+  const processedData = Array.isArray(parsed[0])
+    ? processCSV(parsed)
+    : processCSV(parsed.rawData || parsed.data || []);
 
-  if (Array.isArray(parsed[0])) {
-    const processed = processCSV(parsed);
-    console.log("Processed from CSV:", processed);
-    sharedData.set(processed);
-  } else {
-    if (!parsed.ticketsByStatus || !parsed.topClientsByPriority) {
-      console.warn("Missing keys in saved data. Reprocessing...");
-      const fallbackRaw = parsed.rawData || parsed.data || [];
-      const processed = processCSV(fallbackRaw);
-      sharedData.set(processed);
-    } else {
-      console.log("Loaded parsed data:", parsed);
-      sharedData.set(parsed);
-    }
-  }
+  sharedData.set(processedData);
 
   const tabButtons = document.querySelectorAll("#vizFilterTabs button");
 
+  if (
+    !document.querySelector("#vizFilterTabs button.active") &&
+    tabButtons.length > 0
+  ) {
+    tabButtons[0].classList.add("active");
+  }
+
   tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
       tabButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const type = btn.getAttribute("data-filter");
-
-      switch (type) {
-        case "ticketsCountByPriority":
+      const chartType = btn.dataset.filter;
+      switch (chartType) {
+        case "unresolvedPriority":
           renderUnresolvedPriority();
           break;
         case "unresolvedByCategory":
@@ -146,65 +125,27 @@ document.addEventListener("DOMContentLoaded", () => {
         case "ticketsByStatus":
           renderTicketsByStatus();
           break;
-        // case "topClients":
-        //   renderTopClients();
-        //   break;
-
-        // case "unresolvedByType":
-        //   // renderUnresolvedByType();
-        //   break;
-        // case "unresolvedByCustomer":
-        //   // renderUnresolvedByCustomer();
-        //   break;
-      }
-    });
-  });
-
-  renderUnresolvedPriority();
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const tabButtons = document.querySelectorAll("#vizFilterTabs button");
-
-  // Set default active on first tab if none active
-  if (
-    ![...tabButtons].some((b) => b.classList.contains("active")) &&
-    tabButtons.length > 0
-  ) {
-    tabButtons[0].classList.add("active");
-  }
-
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const type = btn.getAttribute("data-filter");
-
-      switch (type) {
-        case "unresolvedPriority":
-          renderUnresolvedPriority();
-          break;
-        case "ticketsCountUnresolvedByCategory":
-          renderCountUnresolvedByCategory();
-          break;
-        // add your other cases here
         default:
-          console.log("Unknown filter:", type);
+          console.warn("Unknown chart type:", chartType);
       }
     });
   });
 
-  // Trigger default tab's render function
-  const activeBtn = document.querySelector("#vizFilterTabs button.active");
-  if (activeBtn) {
-    const defaultType = activeBtn.getAttribute("data-filter");
-    switch (defaultType) {
+  const activeTab = document.querySelector("#vizFilterTabs button.active");
+  if (activeTab) {
+    const chartType = activeTab.dataset.filter;
+    switch (chartType) {
       case "unresolvedPriority":
         renderUnresolvedPriority();
         break;
-      case "ticketsCountUnresolvedByCategory":
+      case "unresolvedByCategory":
         renderCountUnresolvedByCategory();
         break;
+      case "ticketsByStatus":
+        renderTicketsByStatus();
+        break;
     }
+  } else if (tabButtons.length > 0) {
+    tabButtons[0].click();
   }
 });
