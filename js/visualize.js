@@ -157,6 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
         case "topResolvedClients":
           renderTopClientsByResolvedClosed();
           break;
+        case "unresolvedTicketsByType":
+          renderUnresolvedTicketsByType();
+          break;
         default:
           console.warn("Unknown chart type:", chartType);
       }
