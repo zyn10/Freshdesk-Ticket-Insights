@@ -9,6 +9,7 @@ export function parseAndStoreFile(file) {
     "Priority",
     "Tags",
     "Group",
+    "Type",
   ];
 
   if (isCSV) {
