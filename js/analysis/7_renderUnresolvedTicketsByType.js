@@ -24,7 +24,6 @@ export function renderUnresolvedTicketsByType() {
 
   const chartData = data.unresolvedTicketsByType;
 
-  // Expecting chartData to be like { labels: ["type1", "type2"], values: [count1, count2] }
   if (
     !Array.isArray(chartData.labels) ||
     !Array.isArray(chartData.values) ||
@@ -43,7 +42,7 @@ export function renderUnresolvedTicketsByType() {
         {
           label: "Unresolved Tickets",
           data: chartData.values,
-          backgroundColor: "#ff6f61", // nice red-orange color for unresolved
+          backgroundColor: "#ff6f61",
           barPercentage: 0.6,
           categoryPercentage: 0.7,
         },
@@ -53,6 +52,11 @@ export function renderUnresolvedTicketsByType() {
       indexAxis: "x",
       responsive: true,
       maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 30, // Add padding at the top to ensure labels aren't cut off
+        },
+      },
       scales: {
         x: {
           grid: { display: false },
@@ -60,7 +64,17 @@ export function renderUnresolvedTicketsByType() {
         y: {
           beginAtZero: true,
           grid: { display: true },
-          ticks: { precision: 0 }, // integer ticks
+          ticks: {
+            precision: 0,
+            // Optional: Add some padding at the top of the y-axis
+            callback: function (value) {
+              if (value % 1 === 0) {
+                return value;
+              }
+            },
+          },
+          // Add some padding at the top of the scale
+          suggestedMax: Math.max(...chartData.values) * 1.1, // 10% more than max value
         },
       },
       plugins: {
@@ -69,8 +83,13 @@ export function renderUnresolvedTicketsByType() {
           color: "#333",
           anchor: "end",
           align: "top",
-          font: { weight: "bold", size: 12 },
+          offset: 4, // Add slight offset from the bar
+          font: {
+            weight: "bold",
+            size: 12,
+          },
           formatter: (value) => (value > 0 ? value : ""),
+          clip: false, // Prevent labels from being clipped
         },
         title: { display: false },
       },
